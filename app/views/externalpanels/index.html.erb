@@ -1,0 +1,29 @@
+<h1>Типы внешних панелей</h1>
+    <div id="demo" class="clearfix">
+<table class="display" id="example">
+  <thead>
+      <tr>
+        <th>Название</th>
+        <th>Стоимость</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+  </thead>
+
+  <tbody>
+        <% @externalpanels.each do |externalpanel| %>
+          <tr>
+            <td><%= externalpanel.name %></td>
+            <td class="center"><%= externalpanel.cost %></td>
+            <td class="center"><%= link_to 'Просмотреть', externalpanel %></td>
+            <td class="center"><%= link_to 'Редактрировать', edit_externalpanel_path(externalpanel) %></td>
+            <td class="center"><%= link_to 'Удалить', externalpanel, :confirm => 'Are you sure?', :method => :delete %></td>
+          </tr>
+        <% end %>
+  </tbody>
+</table>
+</div>
+<br />
+
+<h6><%= link_to 'Добавить новый тип внешних панелей', new_externalpanel_path %></h6>

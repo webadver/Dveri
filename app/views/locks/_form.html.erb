@@ -1,0 +1,47 @@
+<%= form_for(@lock, :html => {:multipart => true}) do |f| %>
+    <% if @lock.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@lock.errors.count, "error") %> prohibited this lock from being saved:</h2>
+
+          <ul>
+            <% @lock.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label 'Название' %>
+      <br/>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label 'Цена' %>
+      <br/>
+      <%= f.text_field :cost %>
+    </div>
+    <div>
+      <%= f.label 'Изображение для калькулятора' %> <br/>
+      <%= f.file_field :photo %>
+    </div>
+    <br/>
+    <div>
+      <%= image_tag @lock.photo.url %>
+    </div>
+    <br/>
+
+    <br/>
+    <div>
+      <%= f.label 'Изображение для каталога' %>   <br/>
+      <%= f.file_field :image %>
+    </div>
+    <br/>
+    <div>
+      <%= image_tag @lock.image.url %>
+    </div>
+    <br/>
+    <div class="actions">
+      <%= f.submit 'Обновить' %>
+    </div>
+<% end %>

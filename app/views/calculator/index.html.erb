@@ -1,0 +1,257 @@
+<div id="tabs">
+<ul>
+  <li><a href="#tabs-1">Модель двери</a></li>
+  <li><a href="#tabs-2">Внешняя отделка</a></li>
+  <li><a href="#tabs-3">Внутрення отделка</a></li>
+  <li><a href="#tabs-4">Наличники</a></li>
+  <li><a href="#tabs-5">Цилиндры</a></li>
+  <li><a href="#tabs-6">Фурнитура</a></li>
+  <li><a href="#tabs-7">Доп. замки</a></li>
+  <li><a href="#tabs-8">Доп. опции</a></li>
+</ul>
+
+<div id="tabs-1">
+
+  <ul>
+    <% @locks.each do |lock| %>
+
+        <li style="display:block;width:200px; height:300px;float:left;">
+          <a href="<%= lock.image.url %>" class="preview">
+            <%= image_tag lock.photo.url, :height => "200" %>
+          </a>
+
+          <div>
+            <div class="name_lock"> <%= lock.name %></div>
+            <span class="cost" style="color:#9a3b3b;"><%= lock.cost %></span>
+            <span style="color:#9a3b3b;"> руб.</span><br/>
+            <span class="link_lock" style="cursor:pointer;text-decoration:underline;">выбрать</span>
+          </div>
+        </li>
+
+
+    <% end %>
+
+  </ul>
+
+
+  <div id="item">
+    <img src="/assets/locks/photo/1/original/redut_d.jpg" alt="">
+  </div>
+
+
+</div>
+
+<div id="tabs-2">
+
+
+  <div id="accordion">
+    <h3><a href="#">Тип панели</a></h3>
+
+    <div>
+      <% @externalpanels.each do |panel| %>
+
+          <li class="fish" style="display:block;width:394px; height:300px;float:left;margin-right:25px;">
+            <a href="<%= panel.image.url %>" class="preview">
+              <%= image_tag panel.photo.url, :height => "238" %>
+            </a>
+
+            <div>
+              <div class="name_externalpanel"> <%= panel.name %></div>
+              <span class="cost" style="color:#9a3b3b;"><%= panel.cost %></span>
+              <span style="color:#9a3b3b;"> руб.</span><br/>
+              <!--<span class="link_panel" style="cursor:pointer;text-decoration:underline;">выбрать</span> <br />-->
+              <%= link_to "Выбрать", {:controller => "calculator", :action => "index", :id => panel.id}, :method => :get, :remote => true, :class =>'link_externalpanel' %>
+            </div>
+          </li>
+
+
+      <% end %>
+    </div>
+
+    <h3><a href="#">Рисунок</a></h3>
+
+    <div>
+      <div id="result"></div>
+    </div>
+    <h3><a href="#">Цвет</a></h3>
+
+    <div>
+      <div id="result2"></div>
+    </div>
+  </div>
+
+
+</div>
+
+
+<div id="tabs-3">
+
+
+  <div id="accordion2">
+    <h3><a href="#">Тип панели</a></h3>
+
+    <div>
+      <% @internalpanels.each do |panel| %>
+
+          <li class="fish" style="display:block;width:394px; height:300px;float:left;margin-right:25px;">
+            <a href="<%= panel.image.url %>" class="preview">
+              <%= image_tag panel.photo.url, :height => "238" %>
+            </a>
+
+            <div>
+              <div class="name_internalpanel"> <%= panel.name %></div>
+              <span class="cost" style="color:#9a3b3b;"><%= panel.cost %></span>
+              <span style="color:#9a3b3b;"> руб.</span><br/>
+
+              <%= link_to "выбрать", {:controller => "calculator", :action => "index", :internal_id => panel.id}, :method => :get, :remote => true, :class =>'link_internalpanel' %>
+            </div>
+          </li>
+
+
+      <% end %>
+    </div>
+
+    <h3><a href="#">Рисунок</a></h3>
+
+    <div>
+      <div id="result3"></div>
+    </div>
+    <h3><a href="#">Цвет</a></h3>
+
+    <div>
+      <div id="result4"></div>
+    </div>
+  </div>
+
+
+</div>
+
+<div id="tabs-4">
+  <ul>
+    <% @jambs.each do |jamb| %>
+
+        <li style="display:block;width:200px; height:300px;float:left;">
+          <a href="<%= jamb.image.url %>" class="preview">
+            <%= image_tag jamb.photo.url, :height => "200" %>
+          </a>
+
+          <div>
+            <div class="name_jamb"> <%= jamb.name %></div>
+            <span class="cost" style="color:#9a3b3b;"><%= jamb.cost %></span>
+            <span style="color:#9a3b3b;"> руб.</span><br/>
+            <span class="link_jamb" style="cursor:pointer;text-decoration:underline;">выбрать</span>
+          </div>
+        </li>
+
+
+    <% end %>
+
+  </ul>
+</div>
+
+
+<div id="tabs-5">
+  <ul>
+    <% @cylinders.each do |cylinder| %>
+
+        <li style="display:block;width:200px; height:300px;float:left;">
+          <a href="<%= cylinder.image.url %>" class="preview">
+            <%= image_tag cylinder.photo.url, :height => "200" %>
+          </a>
+
+          <div>
+            <div class="name_cylinder"> <%= cylinder.name %></div>
+            <span class="cost" style="color:#9a3b3b;"><%= cylinder.cost %></span>
+            <span style="color:#9a3b3b;"> руб.</span><br/>
+            <span class="link_cylinder" style="cursor:pointer;text-decoration:underline;">выбрать</span>
+          </div>
+        </li>
+
+
+    <% end %>
+
+  </ul>
+
+</div>
+
+
+<div id="tabs-6">
+  <ul>
+
+
+    <ul>
+      <% @findings.each do |doplock| %>
+
+          <li style="display:block;width:200px; height:300px;float:left;">
+            <a href="<%= doplock.image.url %>" class="preview">
+              <%= image_tag doplock.photo.url, :height => "200" %>
+            </a>
+
+            <div>
+              <div class="name_finding"> <%= doplock.name %></div>
+              <span class="cost" style="color:#9a3b3b;"><%= doplock.cost %></span>
+              <span style="color:#9a3b3b;"> руб.</span><br/>
+              <span class="link_finding" style="cursor:pointer;text-decoration:underline;">выбрать</span>
+            </div>
+          </li>
+
+
+      <% end %>
+
+    </ul>
+  </ul>
+</div>
+
+<div id="tabs-7">
+
+  <ul>
+    <% @doplocks.each do |doplock| %>
+
+        <li style="display:block;width:200px; height:300px;float:left;">
+          <a href="<%= doplock.image.url %>" class="preview">
+            <%= image_tag doplock.photo.url, :height => "200" %>
+          </a>
+
+          <div>
+            <div class="name_doplock"> <%= doplock.name %></div>
+            <span class="cost" style="color:#9a3b3b;"><%= doplock.cost %></span>
+            <span style="color:#9a3b3b;"> руб.</span><br/>
+            <span class="link_doplock" style="cursor:pointer;text-decoration:underline;">выбрать</span>
+          </div>
+        </li>
+
+
+    <% end %>
+
+  </ul>
+
+
+</div>
+
+<div id="tabs-8">
+
+
+  <ul>
+    <% @dopoptions.each do |dopoption| %>
+
+        <li style="display:block;width:200px; height:300px;float:left;">
+
+
+          <div>
+            <div class="name_dopoption"> <%= dopoption.name %></div>
+            <span class="cost" style="color:#9a3b3b;"><%= dopoption.cost %></span>
+            <span style="color:#9a3b3b;"> руб.</span><br/>
+            <span class="link_dopoption" style="cursor:pointer;text-decoration:underline;">выбрать</span>
+          </div>
+        </li>
+
+
+    <% end %>
+
+  </ul>
+
+
+</div>
+
+
+</div>

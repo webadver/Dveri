@@ -1,0 +1,49 @@
+<%= form_for(@internalpanel, :html => {:multipart => true}) do |f| %>
+  <% if @internalpanel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@internalpanel.errors.count, "error") %> prohibited this internalpanel from being saved:</h2>
+
+      <ul>
+      <% @internalpanel.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :cost %><br />
+    <%= f.text_field :cost %>
+  </div>
+
+
+    <div>
+      <%= f.label 'Изображение для калькулятора' %> <br/>
+      <%= f.file_field :photo %>
+    </div>
+    <br/>
+    <div>
+      <%= image_tag @internalpanel.photo.url %>
+    </div>
+    <br/>
+
+    <br/>
+    <div>
+      <%= f.label 'Изображение для каталога' %>   <br/>
+      <%= f.file_field :image %>
+    </div>
+    <br/>
+    <div>
+      <%= image_tag @internalpanel.image.url %>
+    </div>
+    <br/>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

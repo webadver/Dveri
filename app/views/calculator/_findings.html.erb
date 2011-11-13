@@ -1,0 +1,17 @@
+<% @findings.each do |finding| %>
+
+        <li style="display:block;width:200px; height:300px;float:left;">
+          <a href="<%= finding.image.url %>" class="preview">
+            <%= image_tag finding.photo.url, :height => "200" %>
+          </a>
+
+          <div>
+            <div class="name_finding"> </div>
+            <span class="cost" style="color:#9a3b3b;"><%= finding.cost %></span>
+            <span style="color:#9a3b3b;"> руб.</span><br/>
+            <span class="link_finding" style="cursor:pointer;text-decoration:underline;">выбрать</span>
+          </div>
+        </li>
+
+
+    <% end %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @externalcolor.name %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%= @externalcolor.cost %>
+</p>
+ <% for panel in @externalcolor.externalpanels %>
+    <div>
+      <%= panel.name %>
+    </div>
+  <% end %>
+
+<%= link_to 'Edit', edit_externalcolor_path(@externalcolor) %> |
+<%= link_to 'Back', externalcolors_path %>

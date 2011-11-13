@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Название:</b>
+  <%= @doplock.name %>
+</p>
+
+<p>
+  <b>Цена:</b>
+  <%= @doplock.cost %>
+</p>
+
+<br>
+<p>Изображение для калькулятора</p>
+<p>
+  <%= image_tag @doplock.photo.url %>
+
+</p>
+
+<br>
+<p>Изображение для каталога</p>
+<p>
+  <%= image_tag @doplock.image.url %>
+
+</p>
+
+
+
+<%= link_to 'Редактировать', edit_doplock_path(@doplock) %> |
+<%= link_to 'Назад', doplocks_path %>

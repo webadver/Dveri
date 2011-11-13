@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @dopoption.name %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%= @dopoption.cost %>
+</p>
+
+
+<%= link_to 'Редактировать', edit_dopoption_path(@dopoption) %> |
+<%= link_to 'Назад', dopoptions_path %>

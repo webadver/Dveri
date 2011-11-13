@@ -1,0 +1,47 @@
+<%= form_for(@jamb, :html => { :multipart => true }) do |f| %>
+  <% if @jamb.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@jamb.errors.count, "error") %> prohibited this jamb from being saved:</h2>
+
+      <ul>
+      <% @jamb.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'Название' %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label 'Цена' %><br />
+    <%= f.text_field :cost %>
+  </div>
+    <br/>
+  <div>
+      <%= f.label 'Изображение для калькулятора' %> <br/>
+      <%= f.file_field :photo %>
+    </div>
+    <br/>
+    <div>
+      <%= image_tag @jamb.photo.url %>
+    </div>
+    <br/>
+
+    <br/>
+    <div>
+      <%= f.label 'Изображение для каталога' %>   <br/>
+      <%= f.file_field :image %>
+    </div>
+    <br/>
+    <div>
+      <%= image_tag @jamb.image.url %>
+    </div>
+    <br/>
+  <div class="actions">
+    <%= f.submit 'Обновить' %>
+  </div>
+     <br/>
+<% end %>

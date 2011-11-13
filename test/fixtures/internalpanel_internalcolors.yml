@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  internalpanel_id: 1
+  internalcolor_id: 1
+
+two:
+  internalpanel_id: 1
+  internalcolor_id: 1

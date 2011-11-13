@@ -1,0 +1,59 @@
+<%= form_for(@externalcolor, :html => {:multipart => true}) do |f| %>
+  <% if @externalcolor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@externalcolor.errors.count, "error") %> prohibited this externalcolor from being saved:</h2>
+
+      <ul>
+      <% @externalcolor.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <h6><%= f.label "Название" %></h6>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <h6><%= f.label "Цена" %></h6>
+    <%= f.text_field :cost %>
+  </div>
+  <h6>Принадлежит к типам панелей</h6>
+   <div class="field">
+    <% for panel in Externalpanel.all %>
+        <div>
+            <%= check_box_tag "externalcolor[externalpanel_ids][]", panel.id, @externalcolor.externalpanels.include?(panel) %>
+            <%= panel.name  %>
+         </div>
+    <% end %>
+
+  </div>
+
+
+    <div>
+      <%= f.label 'Изображение для калькулятора' %> <br/>
+      <%= f.file_field :photo %>
+    </div>
+    <br/>
+    <div>
+      <%= image_tag @externalcolor.photo.url %>
+    </div>
+    <br/>
+
+    <br/>
+    <div>
+      <%= f.label 'Изображение для каталога' %>   <br/>
+      <%= f.file_field :image %>
+    </div>
+    <br/>
+    <div>
+      <%= image_tag @externalcolor.image.url %>
+    </div>
+    <br/>
+
+  <div class="actions">
+    <%= f.submit "Обновить" %>
+  </div>
+    <br />
+<% end %>

@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  externalpanel_id: 1
+  externaldraw_id: 1
+
+two:
+  externalpanel_id: 1
+  externaldraw_id: 1

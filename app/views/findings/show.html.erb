@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Название:</b>
+  <%= @finding.name %>
+</p>
+
+<p>
+  <b>Цена:</b>
+  <%= @finding.cost %>
+</p>
+<br>
+<p>Изображение для калькулятора</p>
+<p>
+  <%= image_tag @finding.photo.url %>
+
+</p>
+
+<br>
+<p>Изображение для каталога</p>
+<p>
+  <%= image_tag @finding.image.url %>
+
+</p>
+
+
+<%= link_to 'Edit', edit_finding_path(@finding) %> |
+<%= link_to 'Back', findings_path %>

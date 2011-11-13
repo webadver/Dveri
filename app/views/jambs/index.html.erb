@@ -1,0 +1,29 @@
+<h1>Наличники</h1>
+    <div id="demo" class="clearfix">
+<table class="display" id="example">
+  <thead>
+      <tr>
+        <th>Название</th>
+        <th>Стоимость</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+  </thead>
+
+  <tbody>
+        <% @jambs.each do |jamb| %>
+          <tr>
+            <td><%= jamb.name %></td>
+            <td class="center"><%= jamb.cost %></td>
+            <td class="center"><%= link_to 'Просмотреть', jamb %></td>
+            <td class="center"><%= link_to 'Редактрировать', edit_jamb_path(jamb) %></td>
+            <td class="center"><%= link_to 'Удалить', jamb, :confirm => 'Are you sure?', :method => :delete %></td>
+          </tr>
+        <% end %>
+  </tbody>
+</table>
+</div>
+<br />
+
+<h6><%= link_to 'Добавить новый эскиз', new_jamb_path %></h6>

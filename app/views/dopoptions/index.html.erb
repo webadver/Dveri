@@ -1,0 +1,29 @@
+<h1>Дополнительные опции</h1>
+    <div id="demo" class="clearfix">
+<table class="display" id="example">
+  <thead>
+      <tr>
+        <th>Название</th>
+        <th>Стоимость</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+  </thead>
+
+  <tbody>
+        <% @dopoptions.each do |dopoption| %>
+          <tr>
+            <td><%= dopoption.name %></td>
+            <td class="center"><%= dopoption.cost %></td>
+            <td class="center"><%= link_to 'Просмотреть', dopoption %></td>
+            <td class="center"><%= link_to 'Редактрировать', edit_dopoption_path(dopoption) %></td>
+            <td class="center"><%= link_to 'Удалить', dopoption, :confirm => 'Are you sure?', :method => :delete %></td>
+          </tr>
+        <% end %>
+  </tbody>
+</table>
+</div>
+<br />
+
+<h6><%= link_to 'Добавить дополнительную опцию', new_dopoption_path %></h6>

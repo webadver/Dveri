@@ -1,0 +1,21 @@
+
+        <% @internaldraw.each do |panel| %>
+
+            <li class="fish" style="display:block;width:394px; height:300px;float:left;margin-right:25px;">
+              <a href="<%= panel.image.url %>" class="preview">
+                <%= image_tag panel.photo.url, :height => "238" %>
+              </a>
+
+              <div>
+                <div class="name_internaldraw"><%= panel.name %></div>
+                <span class="cost" style="color:#9a3b3b;"><%= panel.cost %></span>
+                <span style="color:#9a3b3b;"> руб.</span><br/>
+                <span class="link_internaldraw" style="cursor:pointer;text-decoration:underline;">выбрать</span> <br />
+
+              </div>
+            </li>
+
+        <% end %>
+
+
+

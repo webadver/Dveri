@@ -1,0 +1,2 @@
+class ExtdrawController < ApplicationController
+end

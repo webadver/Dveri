@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Название:</b>
+  <%= @cylinder.name %>
+</p>
+
+<p>
+  <b>Цена:</b>
+  <%= @cylinder.cost %>
+</p>
+
+<br>
+<p>Изображение для калькулятора</p>
+<p>
+  <%= image_tag @cylinder.photo.url %>
+
+</p>
+
+<br>
+<p>Изображение для каталога</p>
+<p>
+  <%= image_tag @cylinder.image.url %>
+
+</p>
+
+
+<%= link_to 'Edit', edit_cylinder_path(@cylinder) %> |
+<%= link_to 'Back', cylinders_path %>

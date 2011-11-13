@@ -1,0 +1,48 @@
+<%= form_for(@doplock, :html => {:multipart => true}) do |f| %>
+  <% if @doplock.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@doplock.errors.count, "error") %> prohibited this doplock from being saved:</h2>
+
+      <ul>
+      <% @doplock.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'Название' %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label 'Цена' %><br />
+    <%= f.text_field :cost %>
+  </div>
+
+    <div>
+      <%= f.label 'Изображение для калькулятора' %> <br/>
+      <%= f.file_field :photo %>
+    </div>
+    <br/>
+    <div>
+      <%= image_tag @doplock.photo.url %>
+    </div>
+    <br/>
+
+    <br/>
+    <div>
+      <%= f.label 'Изображение для каталога' %>   <br/>
+      <%= f.file_field :image %>
+    </div>
+    <br/>
+    <div>
+      <%= image_tag @doplock.image.url %>
+    </div>
+    <br/>
+
+
+  <div class="actions">
+    <%= f.submit 'Обновить' %>
+  </div>
+<% end %>

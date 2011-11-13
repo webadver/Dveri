@@ -1,0 +1,29 @@
+<h1>Типы внутренних панелей</h1>
+    <div id="demo" class="clearfix">
+<table class="display" id="example">
+  <thead>
+      <tr>
+        <th>Название</th>
+        <th>Стоимость</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+  </thead>
+
+  <tbody>
+        <% @internalpanels.each do |internalpanel| %>
+          <tr>
+            <td><%= internalpanel.name %></td>
+            <td class="center"><%= internalpanel.cost %></td>
+            <td class="center"><%= link_to 'Просмотреть', internalpanel %></td>
+            <td class="center"><%= link_to 'Редактрировать', edit_internalpanel_path(internalpanel) %></td>
+            <td class="center"><%= link_to 'Удалить', internalpanel, :confirm => 'Are you sure?', :method => :delete %></td>
+          </tr>
+        <% end %>
+  </tbody>
+</table>
+</div>
+<br />
+
+<h6><%= link_to 'Добавить новый тип панели', new_internalpanel_path %></h6>

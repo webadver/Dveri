@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <link rel="stylesheet" href="/blueprint/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="/blueprint/style.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="/blueprint/print.css" type="text/css" media="print">
+
+  <!--[if lt IE 8]>
+  <link rel="stylesheet" href="/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+  <%= javascript_include_tag 'jquery', 'jquery.rails.js' %>
+  <%= javascript_include_tag 'jquery', 'application' %>
+  <%= csrf_meta_tag %>
+
+  <link rel="stylesheet" href="/js/themes/base/jquery.ui.all.css">
+  <link rel="stylesheet" href="/js/themes/base/jquery.ui.accordion.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+  <script src="/js/external/jquery.cookie.js"></script>
+  <script src="/js/ui/jquery.ui.core.js"></script>
+  <script src="/js/ui/jquery.ui.widget.js"></script>
+  <script src="/js/ui/jquery.ui.tabs.js"></script>
+  <script src="/js/ui/jquery.ui.accordion.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/nabor.js"></script>
+  <!--<script type="text/javascript" src="/js/easyTooltip.js"></script>-->
+  <link rel="stylesheet" href="/css/demos.css">
+
+
+  <script>
+      $(function() {
+          $("#accordion2").accordion(
+          {autoHeight:false}
+                  );
+          $("#accordion").accordion(
+          {autoHeight:false}
+                  );
+          $("#tabs").tabs();
+      });
+
+
+  </script>
+
+  <script>
+
+  </script>
+  <script type="text/javascript">
+      $(document).ready(function() {
+          $("img#link").easyTooltip({
+              useElement: "item"
+          });
+      });
+  </script>
+
+  <title>Калькулятор</title>
+</head>
+
+<body>
+<div class="container">
+  <div class="span-24 header">
+
+    <div class="span-14 prepend-1" style="padding-top:20px;">
+
+
+      <form id="form-cart" action="." class="zf zf-inited">
+        <div>
+          <div class="spisok_tree2">Модель двери:</div>
+
+          <div id="block_lock" class="nomination_tree"></div>
+          <div style="clear:both;"></div>
+        </div>
+
+
+        <div class="spisok_tree2">Внешняя отделка</div><div style="clear:both;"></div>
+        <div class="spisok_tree">Тип панели: </div>
+        <div class="nomination_tree" id="block_external_type_panel"></div>
+
+         <div style="clear:both;"></div>
+
+        <div class="spisok_tree">Рисунок: </div>
+        <div class="nomination_tree" id="block_external_type_draw"></div>
+        <div style="clear:both;"></div>
+        <div class="spisok_tree">Цвет: </div>
+        <div class="nomination_tree" id="block_external_type_color"></div>
+        <div style="clear:both;"></div>
+
+        <div class="spisok_tree2">Внутрення отделка</div><div style="clear:both;"></div>
+
+        <div class="spisok_tree">Тип панели: </div>
+        <div class="nomination_tree" id="block_internal_type_panel"></div>
+
+         <div style="clear:both;"></div>
+
+        <div class="spisok_tree">Рисунок: </div>
+        <div class="nomination_tree" id="block_internal_type_draw"></div>
+        <div style="clear:both;"></div>
+        <div class="spisok_tree">Цвет: </div>
+        <div class="nomination_tree" id="block_internal_type_color"></div>
+        <div style="clear:both;"></div>
+
+        <div class="spisok_tree2">Наличники:</div>
+        <div class="nomination_tree" id="block_jamb"></div>
+        <div style="clear:both;"></div>
+
+
+        <div class="spisok_tree2">Цилиндры - Секретность:</div>
+        <div class="nomination_tree" id="block_cylinder"></div>
+        <div style="clear:both;"></div>
+
+        <div class="spisok_tree2">Фурнитура:</div>
+         <div class="nomination_tree" id="block_finding"></div>
+         <div style="clear:both;"></div>
+
+        <div class="spisok_tree2">Доп. замки:</div><div style="clear:both;"></div>
+          <div id="dop_lock">
+
+          </div>
+         <div style="clear:both;"></div>
+        <div class="spisok_tree2">Доп. опции:</div><div style="clear:both;"></div>
+        <div id="dop_option"> </div>
+        <div style="clear:both;"></div>
+        <div id="count_price"></div>
+
+
+        <br/>
+        <br/>
+        <input type="submit" value="Оформить">
+        <br/>
+        <br/>
+      </form>
+
+
+    </div>
+    <div class="span-9 last">
+
+      <div style="padding-top:20px;padding-left:25px;">
+        <div style="width: 137px; height: 268px;background-color:gray;float:left;margin-right:10px;">
+          <div style="width: 118px; height: 249px;background-color:#bdb76b;margin:10px;">
+            <div style="background-image:url('/panel_210_l.png');width:100%;height:100%;">
+              <div style="width:10px;height:10px;background-color:gray;position:relative;top:80px;left:5px;"></div>
+              <div style="width:10px;height:10px;background-color:gray;position:relative;top:99px;left:5px;"></div>
+            </div>
+
+          </div>
+
+        </div>
+        <div style="width: 137px; height: 268px;background-color:gray;float:left;margin-right:10px;">
+          <div style="width: 118px; height: 249px;background-color:#bdb76b;margin:10px;">
+
+            <div style="width:10px;height:10px;background-color:gray;position:relative;top:80px;left:103px;"></div>
+            <div style="width:10px;height:10px;background-color:gray;position:relative;top:99px;left:103px;"></div>
+
+          </div>
+        </div>
+
+
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="span-24 content">
+
+    <%= yield %>
+
+  </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<%= form_for(@finding, :html => {:multipart => true}) do |f| %>
+  <% if @finding.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@finding.errors.count, "error") %> prohibited this finding from being saved:</h2>
+
+      <ul>
+      <% @finding.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'Название' %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label 'Цена' %><br />
+    <%= f.text_field :cost %>
+  </div>
+
+    <div>
+      <%= f.label 'Изображение для калькулятора' %> <br/>
+      <%= f.file_field :photo %>
+    </div>
+    <br/>
+    <div>
+      <%= image_tag @finding.photo.url %>
+    </div>
+    <br/>
+
+    <br/>
+    <div>
+      <%= f.label 'Изображение для каталога' %>   <br/>
+      <%= f.file_field :image %>
+    </div>
+    <br/>
+    <div>
+      <%= image_tag @finding.image.url %>
+    </div>
+    <br/>
+  <div class="actions">
+    <%= f.submit 'Обновить' %>
+  </div>
+<% end %>
+
+
+
+

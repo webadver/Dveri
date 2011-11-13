@@ -1,0 +1,2 @@
+module InternalcolorsHelper
+end

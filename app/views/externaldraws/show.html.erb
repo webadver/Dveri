@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @externaldraw.name %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%= @externaldraw.cost %>
+</p>
+
+
+<%= link_to 'Edit', edit_externaldraw_path(@externaldraw) %> |
+<%= link_to 'Back', externaldraws_path %>

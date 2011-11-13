@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Название:</b>
+  <%= @jamb.name %>
+</p>
+
+<p>
+  <b>Цена:</b>
+  <%= @jamb.cost %>
+</p>
+<p>
+  <%= image_tag @jamb.photo.url %>
+
+</p>
+<br>
+<p>Изображение для каталога</p>
+<p>
+  <%= image_tag @jamb.image.url %>
+
+</p>
+
+<%= link_to 'Редактировать', edit_jamb_path(@jamb) %> |
+<%= link_to 'Назад', jambs_path %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @internaldraw.name %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%= @internaldraw.cost %>
+</p>
+
+
+<%= link_to 'Edit', edit_internaldraw_path(@internaldraw) %> |
+<%= link_to 'Back', internaldraws_path %>

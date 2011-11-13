@@ -1,0 +1,2 @@
+module InternaldrawsHelper
+end

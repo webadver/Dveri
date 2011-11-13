@@ -1,0 +1,29 @@
+<h1>Цилиндры - Секретность</h1>
+    <div id="demo" class="clearfix">
+<table class="display" id="example">
+  <thead>
+      <tr>
+        <th>Название</th>
+        <th>Стоимость</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+  </thead>
+
+  <tbody>
+        <% @cylinders.each do |cylinder| %>
+          <tr>
+            <td><%= cylinder.name %></td>
+            <td class="center"><%= cylinder.cost %></td>
+            <td class="center"><%= link_to 'Просмотреть', cylinder %></td>
+            <td class="center"><%= link_to 'Редактрировать', edit_cylinder_path(cylinder) %></td>
+            <td class="center"><%= link_to 'Удалить', cylinder, :confirm => 'Are you sure?', :method => :delete %></td>
+          </tr>
+        <% end %>
+  </tbody>
+</table>
+</div>
+<br />
+
+<h6><%= link_to 'Новый Цилиндр', new_cylinder_path %></h6>

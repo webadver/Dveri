@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Название:</b>
+  <%= @lock.name %>
+</p>
+
+<p>
+  <b>Цена:</b>
+  <%= @lock.cost %>
+</p>
+
+<br>
+<p>Изображение для калькулятора</p>
+<p>
+  <%= image_tag @lock.photo.url %>
+
+</p>
+
+<br>
+<p>Изображение для каталога</p>
+<p>
+  <%= image_tag @lock.image.url %>
+
+</p>
+
+
+
+
+<%= link_to 'Редактировать', edit_lock_path(@lock) %> |
+<%= link_to 'Назад', locks_path %>

@@ -1,0 +1,29 @@
+<h1>Рисунки для внешних панелей</h1>
+    <div id="demo" class="clearfix">
+<table class="display" id="example">
+  <thead>
+      <tr>
+        <th>Название</th>
+        <th>Стоимость</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+  </thead>
+
+  <tbody>
+        <% @externaldraws.each do |externaldraw| %>
+          <tr>
+            <td><%= externaldraw.name %></td>
+            <td class="center"><%= externaldraw.cost %></td>
+            <td class="center"><%= link_to 'Просмотреть', externaldraw %></td>
+            <td class="center"><%= link_to 'Редактрировать', edit_externaldraw_path(externaldraw) %></td>
+            <td class="center"><%= link_to 'Удалить', externaldraw, :confirm => 'Are you sure?', :method => :delete %></td>
+          </tr>
+        <% end %>
+  </tbody>
+</table>
+</div>
+<br />
+
+<h6><%= link_to 'Добавить новый рисунок', new_externaldraw_path %></h6>

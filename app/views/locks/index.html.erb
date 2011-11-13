@@ -1,0 +1,29 @@
+<h1>Эскизы запирания</h1>
+    <div id="demo" class="clearfix">
+<table class="display" id="example">
+  <thead>
+      <tr>
+        <th>Название</th>
+        <th>Стоимость</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+  </thead>
+
+  <tbody>
+        <% @locks.each do |lock| %>
+          <tr>
+            <td><%= lock.name %></td>
+            <td class="center"><%= lock.cost %></td>
+            <td class="center"><%= link_to 'Просмотреть', lock %></td>
+            <td class="center"><%= link_to 'Редактрировать', edit_lock_path(lock) %></td>
+            <td class="center"><%= link_to 'Удалить', lock, :confirm => 'Are you sure?', :method => :delete %></td>
+          </tr>
+        <% end %>
+  </tbody>
+</table>
+</div>
+<br />
+
+<h6><%= link_to 'Добавить новый эскиз', new_lock_path %></h6>

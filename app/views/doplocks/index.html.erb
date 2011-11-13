@@ -1,0 +1,29 @@
+<h1>Дополнительные замки</h1>
+    <div id="demo" class="clearfix">
+<table class="display" id="example">
+  <thead>
+      <tr>
+        <th>Название</th>
+        <th>Стоимость</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+  </thead>
+
+  <tbody>
+        <% @doplocks.each do |doplock| %>
+          <tr>
+            <td><%= doplock.name %></td>
+            <td class="center"><%= doplock.cost %></td>
+            <td class="center"><%= link_to 'Просмотреть', doplock %></td>
+            <td class="center"><%= link_to 'Редактрировать', edit_doplock_path(doplock) %></td>
+            <td class="center"><%= link_to 'Удалить', doplock, :confirm => 'Are you sure?', :method => :delete %></td>
+          </tr>
+        <% end %>
+  </tbody>
+</table>
+</div>
+<br />
+
+<h6><%= link_to 'Добавить новый дополнительный замок', new_doplock_path %></h6>

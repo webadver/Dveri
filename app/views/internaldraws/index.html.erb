@@ -1,0 +1,29 @@
+<h1>Рисунки для внутренних панелей</h1>
+    <div id="demo" class="clearfix">
+<table class="display" id="example">
+  <thead>
+      <tr>
+        <th>Название</th>
+        <th>Стоимость</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+  </thead>
+
+  <tbody>
+        <% @internaldraws.each do |internaldraw| %>
+          <tr>
+            <td><%= internaldraw.name %></td>
+            <td class="center"><%= internaldraw.cost %></td>
+            <td class="center"><%= link_to 'Просмотреть', internaldraw %></td>
+            <td class="center"><%= link_to 'Редактрировать', edit_internaldraw_path(internaldraw) %></td>
+            <td class="center"><%= link_to 'Удалить', internaldraw, :confirm => 'Are you sure?', :method => :delete %></td>
+          </tr>
+        <% end %>
+  </tbody>
+</table>
+</div>
+<br />
+
+<h6><%= link_to 'Добавить новый рисунок', new_internaldraw_path %></h6>

@@ -1,0 +1,62 @@
+<%= form_for(@internaldraw, :html => {:multipart => true}) do |f| %>
+  <% if @internaldraw.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@internaldraw.errors.count, "error") %> prohibited this internaldraw from being saved:</h2>
+
+      <ul>
+      <% @internaldraw.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :cost %><br />
+    <%= f.text_field :cost %>
+  </div>
+
+
+   <h6>Принадлежит к типам панелей</h6>
+   <div class="field">
+    <% for panel in Internalpanel.all %>
+        <div>
+            <%= check_box_tag "internaldraw[internalpanel_ids][]", panel.id, @internaldraw.internalpanels.include?(panel) %>
+            <%= panel.name  %>
+         </div>
+    <% end %>
+
+
+    </div>
+
+
+    <div>
+      <%= f.label 'Изображение для калькулятора' %> <br/>
+      <%= f.file_field :photo %>
+    </div>
+    <br/>
+    <div>
+      <%= image_tag @internaldraw.photo.url %>
+    </div>
+    <br/>
+
+    <br/>
+    <div>
+      <%= f.label 'Изображение для каталога' %>   <br/>
+      <%= f.file_field :image %>
+    </div>
+    <br/>
+    <div>
+      <%= image_tag @internaldraw.image.url %>
+    </div>
+    <br/>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

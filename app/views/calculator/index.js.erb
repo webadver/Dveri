@@ -1,0 +1,41 @@
+<% if @externaldraw.present? %>
+$("#result").html("<%= escape_javascript(render 'lock') %>");
+$("#result2").html("<%= escape_javascript(render 'lock2') %>");
+$( "#accordion" ).accordion({ active: 1 });
+      $('.link_externaldraw').click(function(){
+      var name = $(this).closest('div').contents('.name_externaldraw').text();
+      var cost = $(this).closest('div').contents('.cost').text();
+      $('#block_external_type_draw').html("<div class='dopp'><span class='name_spisok'>" + name + "</span>" + "<span class='cost'> " + cost + " руб.</span> <span class='del'><img width='11' height='11' src='/images/del.png' alt='удалить' /> </span></div>");
+      $( "#accordion" ).accordion({ active: 2 });
+
+    });
+
+      $('.link_externalcolor').click(function(){
+      var name = $(this).closest('div').contents('.name_externalcolor').text();
+      var cost = $(this).closest('div').contents('.cost').text();
+      $('#block_external_type_color').html("<div class='dopp'><span class='name_spisok'>" + name + "</span>" + "<span class='cost'> " + cost + " руб.</span> <span class='del'><img width='11' height='11' src='/images/del.png' alt='удалить' /> </span></div>")
+
+    });
+ <% end %>
+<% if @internaldraw.present? %>
+$("#result3").html("<%= escape_javascript(render 'lock3') %>");
+$("#result4").html("<%= escape_javascript(render 'lock4') %>");
+$( "#accordion2" ).accordion({ active: 1 });
+
+
+
+      $('.link_internaldraw').click(function(){
+      var name = $(this).closest('div').contents('.name_internaldraw').text();
+      var cost = $(this).closest('div').contents('.cost').text();
+      $('#block_internal_type_draw').html("<div class='dopp'><span class='name_spisok'>" + name + "</span>" + "<span class='cost'> " + cost + " руб.</span> <span class='del'><img width='11' height='11' src='/images/del.png' alt='удалить' /> </span></div>")
+      $( "#accordion2" ).accordion({ active: 2 });
+
+    });
+
+      $('.link_internalcolor').click(function(){
+      var name = $(this).closest('div').contents('.name_internalcolor').text();
+      var cost = $(this).closest('div').contents('.cost').text();
+      $('#block_internal_type_color').html("<div class='dopp'><span class='name_spisok'>" + name + "</span>" + "<span class='cost'> " + cost + " руб.</span> <span class='del'><img width='11' height='11' src='/images/del.png' alt='удалить' /> </span></div>")
+
+    });
+ <% end %>

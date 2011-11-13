@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @internalpanel.name %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%= @internalpanel.cost %>
+</p>
+
+
+<%= link_to 'Edit', edit_internalpanel_path(@internalpanel) %> |
+<%= link_to 'Back', internalpanels_path %>
